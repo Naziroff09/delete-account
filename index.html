@@ -1,59 +1,122 @@
-<form action="https://formsubmit.co/mavisoft.dev@gmail.com" method="POST">
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mavi - Akkauntni o'chirish</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px; /* Siz xohlagan o'tkirroq burchaklar */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            font-size: 14px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #2575FC;
+        }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #ff4b2b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff310d;
+        }
+    </style>
+</head>
+<body>
 
-  <div class="field">
-    <label>Phone Number</label>
-    <input
-      type="tel"
-      name="phone"
-      placeholder="+998 XX XXX XX XX"
-      required
-    />
-  </div>
+<div class="container">
+    <h2>Ma'lumotlarni o'chirish</h2>
+    <p>Akkauntingizni o'chirish uchun quyidagi formani to'ldiring. Biz 24 soat ichida so'rovingizni ko'rib chiqamiz.</p>
 
-  <div class="field">
-    <label>Reason for Deletion</label>
+    <!-- FORM START -->
+    <form action="https://formsubmit.co/mavisoft.dev@gmail.com" method="POST">
+        
+        <!-- Spam himoyasi (Captcha) ni o'chirish -->
+        <input type="hidden" name="_captcha" value="false">
+        
+        <!-- Email mavzusi -->
+        <input type="hidden" name="_subject" value="Mavi: Yangi akkaunt o'chirish so'rovi!">
 
-    <select name="reason" required>
-      <option value="">Select a reason</option>
-      <option>I no longer use the app</option>
-      <option>Privacy concerns</option>
-      <option>I have another account</option>
-      <option>Other</option>
-    </select>
-  </div>
+        <div class="field">
+            <label>Telefon raqamingiz</label>
+            <input type="tel" name="phone" placeholder="+998 90 123 45 67" required>
+        </div>
 
-  <div class="field">
-    <label>Additional Comments</label>
+        <div class="field">
+            <label>O'chirish sababi</label>
+            <select name="reason" required>
+                <option value="">Sababni tanlang</option>
+                <option value="no_longer_use">Ilovadan foydalanmayman</option>
+                <option value="privacy">Maxfiylik masalalari</option>
+                <option value="another_account">Boshqa akkauntim bor</option>
+                <option value="other">Boshqa sabab</option>
+            </select>
+        </div>
 
-    <textarea
-      name="comment"
-      placeholder="Write your comments here..."
-    ></textarea>
-  </div>
+        <div class="field">
+            <label>Qo'shimcha izoh (ixtiyoriy)</label>
+            <textarea name="comment" placeholder="Xohlasangiz, batafsilroq yozing..."></textarea>
+        </div>
 
-  <!-- Email subject -->
-  <input
-    type="hidden"
-    name="_subject"
-    value="New Mavi Account Deletion Request"
-  >
+        <button type="submit" class="btn">So'rovni yuborish</button>
+    </form>
+    <!-- FORM END -->
+</div>
 
-  <!-- Disable captcha -->
-  <input
-    type="hidden"
-    name="_captcha"
-    value="false"
-  >
-
-  <!-- Success page -->
-  <input
-    type="hidden"
-    name="_next"
-    value="https://naziroff09.github.io/delete-account/success.html"
-  >
-
-  <button class="btn" type="submit">
-    Submit Deletion Request
-  </button>
-
-</form>
+</body>
+</html>
