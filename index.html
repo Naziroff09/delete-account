@@ -1,147 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mavi - Delete Account</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1a73e8;
-      margin-bottom: 8px;
-    }
-    h1 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #222;
-    }
-    p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .warning {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #856404;
-      margin-bottom: 24px;
-    }
-    label {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #444;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 14px;
-      margin-bottom: 16px;
-      outline: none;
-      transition: border 0.2s;
-    }
-    input:focus, textarea:focus, select:focus {
-      border-color: #1a73e8;
-    }
-    textarea { resize: vertical; height: 100px; }
-    button {
-      width: 100%;
-      padding: 14px;
-      background: #e53935;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    button:hover { background: #c62828; }
-    .steps {
-      background: #f0f4ff;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin-bottom: 24px;
-    }
-    .steps h3 { font-size: 15px; margin-bottom: 10px; color: #333; }
-    .steps ol { padding-left: 18px; font-size: 14px; color: #555; line-height: 2; }
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 13px;
-      color: #999;
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="logo">Mavi</div>
-    <h1>Delete Account Request</h1>
-    <p>You can request the deletion of your account and all associated data by filling out the form below. Your request will be processed within <strong>7 business days</strong>.</p>
+<form action="https://formsubmit.co/mavisoft.dev@gmail.com" method="POST">
 
-    <div class="warning">
-      ⚠️ This action is permanent. Once deleted, your account and all data cannot be recovered.
-    </div>
-
-    <div class="steps">
-      <h3>📋 How to request account deletion:</h3>
-      <ol>
-        <li>Fill in your registered phone number</li>
-        <li>Select a reason for deletion</li>
-        <li>Submit the form</li>
-        <li>You will receive a confirmation via SMS</li>
-      </ol>
-    </div>
-
+  <div class="field">
     <label>Phone Number</label>
-    <input type="tel" placeholder="+998 XX XXX XX XX" />
+    <input
+      type="tel"
+      name="phone"
+      placeholder="+998 XX XXX XX XX"
+      required
+    />
+  </div>
 
+  <div class="field">
     <label>Reason for Deletion</label>
-    <select>
-      <option value="">-- Select a reason --</option>
+
+    <select name="reason" required>
+      <option value="">Select a reason</option>
       <option>I no longer use the app</option>
       <option>Privacy concerns</option>
       <option>I have another account</option>
       <option>Other</option>
     </select>
-
-    <label>Additional Comments (optional)</label>
-    <textarea placeholder="Write your comments here..."></textarea>
-
-    <button>Submit Deletion Request</button>
-
-    <div class="footer">
-      © 2025 Mavi. All rights reserved.<br/>
-      Contact: support@mavi.uz
-    </div>
   </div>
-</body>
-</html>
+
+  <div class="field">
+    <label>Additional Comments</label>
+
+    <textarea
+      name="comment"
+      placeholder="Write your comments here..."
+    ></textarea>
+  </div>
+
+  <!-- Email subject -->
+  <input
+    type="hidden"
+    name="_subject"
+    value="New Mavi Account Deletion Request"
+  >
+
+  <!-- Disable captcha -->
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false"
+  >
+
+  <!-- Success page -->
+  <input
+    type="hidden"
+    name="_next"
+    value="https://naziroff09.github.io/delete-account/success.html"
+  >
+
+  <button class="btn" type="submit">
+    Submit Deletion Request
+  </button>
+
+</form>
